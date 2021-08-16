@@ -1,0 +1,20 @@
+{
+  "name": "startup-guide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Henit Chobisa",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.1.0",
+    "mongoose": "^5.13.7",
+    "mongoose-paginate-v2": "^1.4.2",
+    "nodemon": "^2.0.12"
+  }
+}
