@@ -12,10 +12,10 @@ router.post('/', async (req, res) => {
             link,
             thumbnail,
         } = req.body;
-        let YoutubeChannel = await YoutubeChannel.findOne({ name });
-        if (YoutubeChannel == null){
-            YoutubeChannel = await new YoutubeChannel({name, category, description, link, thumbnail});
-            YoutubeChannel.save();
+        let youtubeChannel = await YoutubeChannel.findOne({ name });
+        if (youtubeChannel == null){
+            youtubeChannel = await new YoutubeChannel({name, category, description, link, thumbnail});
+            youtubeChannel.save();
             res.send("Bingo!, new YoutubeChannel added");
         }
         else {
