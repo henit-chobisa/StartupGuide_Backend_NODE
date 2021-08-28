@@ -2,7 +2,7 @@ const express = require('express');
 const db = require('./config/db');
 const app = express();
 const port = process.env.PORT || 5000;
-const middleWareAuth = require('./middleware/authenticateJWT');
+const middleWareAuth = require('./middleware/verifyWebToken');
 
 db();
 app.use(express.json());
