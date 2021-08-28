@@ -7,7 +7,7 @@ const middleWareAuth = require('./middleware/authenticateJWT');
 db();
 app.use(express.json());
 
-app.use('/api/getBooks', require('./routes/Books/getBooks'));
+app.use('/api/getBooks' , require('./routes/Books/getBooks'));
 app.use('/api/addBooks', middleWareAuth ,require('./routes/Books/addBooks'));
 
 app.use('/api/getBlogs',require('./routes/Blogs/getBlogs'));
@@ -28,10 +28,7 @@ app.use('/api/addPodcasts',middleWareAuth , require('./routes/Podcasts/addPodcas
 app.use('/api/getTweets', require('./routes/Tweets/getTweets'));
 app.use('/api/addTweets', middleWareAuth , require('./routes/Tweets/addTweets'));
 
-app.use('/api/signUp',require('./config/register'));
-app.use('/api/login', require('./config/login'));
-app.use('/api/getJWT', require('./middleWare/getAToken'));
-
+app.use('/api/auth',require('./config/authentication'));
 
 app.listen(port, () => {
 	console.log(`server is running on port ${port}`);

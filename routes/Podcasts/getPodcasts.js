@@ -8,7 +8,6 @@ router.get('/', async (req, res) => {
         var url_parts = url.parse(req.url, true);
         var query = url_parts.query;
 		const podcasts = await Podcast.find().limit(6).skip((parseInt(query.page) - 1) *6);
-		console.log(podcasts);
 		return res.json(podcasts);
 	} catch (err) {
 		console.log(err);

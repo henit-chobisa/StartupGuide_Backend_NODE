@@ -6,8 +6,7 @@ const refreshTokenSecret = 'ncruw9u9u2r90nu2n9ru24ur490niu43nut934ntn43tvn3424i3
 const authenticateJWT = (req,res,next) => {
     const authHeader = req.headers.authorization;
     if(authHeader) {
-        const token = authHeader.split('  ')[1];
-        console.log(token);
+        const token = authHeader.split(' ')[1];
         jwt.verify(token, accessTokenSecret, (err, user) => {
             if (err) {
                 res.send(err);
