@@ -37,7 +37,7 @@ app.use('/api/addStartupStories', authenticate ,require('./routes/StartupStories
 app.use('/api/getStartupStories', require('./routes/StartupStories/getStartupStories'));
 
 app.use('/api/getYoutubeChannels', require('./routes/YoutubeChannels/getYoutubeChannels'));
-app.use('/api/addYouTubeChannels',authenticate ,require('./routes/YouTubeChannels/addYoutubeChannel'));
+app.use('/api/addYouTubeChannels',authenticate ,require('./routes/YoutubeChannels/addYoutubeChannels'));
 
 app.use('/api/getPodcasts', require('./routes/Podcasts/getPodcasts'));
 app.use('/api/addPodcasts',authenticate , require('./routes/Podcasts/addPodcast'));
