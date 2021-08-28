@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
 
 const accessTokenSecret = 'bfwbfwefewjfewhfkweroitj4witji42jtniwitvjwutw094eut0w4u';
-const refreshTokenSecret = 'ncruw9u9u2r90nu2n9ru24ur490niu43nut934ntn43tvn3424i34ir2';
 
 const authenticateJWT = (req,res,next) => {
     const authHeader = req.headers.authorization;
