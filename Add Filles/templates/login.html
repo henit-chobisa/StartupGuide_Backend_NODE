@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Login</title>
+</head>
+
+<body>
+    <style>
+        .LoginContainer {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loginContent {
+            font-family: 'futura';
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            height: 20%;
+            width: 30%;
+            justify-content: center;
+        }
+    </style>
+    <div class="LoginContainer">
+        <div class="loginContent">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_eR9-m6W_aPNbGRTc80kXQcWG-a0I-qn4oTqUYAo1_KUyXbSOA_uazxT30ynIEtGhZ2U&usqp=CAU"
+                style="width: 150px; height: 150px;">
+            <br>
+            <h2>Login for Admin Previleges</h2>
+            <br>
+            <form style="width: 100%;" action="/login" method="POST">
+                <div class="mb-3">
+                  <div class="input-group flex-nowrap" >
+                    <span class="input-group-text" id="addon-wrapping">📮</span>
+                    <input type="email" name = "email" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="addon-wrapping">
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">🧑🏽‍💻</span>
+                    <input type="text" name = "Username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                  </div>
+                </div>
+                  <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">🔐</span>
+                    <input type="password" class="form-control" name = "password" placeholder="Password" aria-label="Username" aria-describedby="addon-wrapping">
+                  </div>
+                  <br>
+                <button type="submit" class="btn btn-success" style="width: 100%;border-radius: 10px;">Log me in...</button>
+              </form>
+            
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <script src="/static/controller.js"></script>
+</body>
+
+</html>
