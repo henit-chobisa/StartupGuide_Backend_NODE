@@ -1,10 +1,12 @@
 const express = require('express');
 const db = require('./config/db');
 const app = express();
+const cors = require('cors');
 const port = process.env.PORT || 5500;
 const accessTokenSecret = 'bfwbfwefewjfewhfkweroitj4witji42jtniwitvjwutw094eut0w4u';
 const authenticate = require('./middleWare/authenticate');
 db();
+app.use(cors())
 app.use(express.json());
 
 app.use('/api/getBooks' , require('./routes/Books/getBooks'));
