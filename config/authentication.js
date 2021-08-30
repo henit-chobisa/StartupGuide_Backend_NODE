@@ -14,7 +14,7 @@ router.post('/login', async (req, res) => {
         const { name, email, password } = req.body;
         let user = await Admin.findOne({email});
         if (user == null){
-            res.sendStatus(500).statusMessage("User Not Found");
+            res.sendStatus(500).send({"message" : "Sorry, user not found"});
         }
         else {
             const validation = crypto.pbkdf2Sync(password, user.salt, 1000, 64, `sha512`).toString(`hex`);
@@ -25,13 +25,12 @@ router.post('/login', async (req, res) => {
                 console.log(refreshTokens)
                 res.json({accessToken, refreshToken});
             } else {
-                res.status(404).send("Server Error");
+                res.status(404).send({"message" : "Incorrect Password"});
             }
         }
     }
     catch (err) {
-        res.status(500);
-        res.send("Error in server");
+        res.status(500).send({"message" : "Error in server"});
     }
 })
 
