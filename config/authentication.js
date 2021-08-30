@@ -14,6 +14,7 @@ router.post('/login', async (req, res) => {
         const { name, email, password } = req.body;
         let user = await Admin.findOne({email});
         if (user == null){
+            res.sendStatus(500);
             res.send("Sorry, this email doesn't exist, try registering first");
         }
         else {
@@ -25,6 +26,7 @@ router.post('/login', async (req, res) => {
                 console.log(refreshTokens)
                 res.json({accessToken, refreshToken});
             } else {
+                res.sendStatus(500);
                 res.send("Incorrect password");
             }
         }
